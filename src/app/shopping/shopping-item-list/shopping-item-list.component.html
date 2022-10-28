@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <mat-form-field appearance="outline" style="width: 50%;">
+        <input matInput placeholder="Search">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row" *ngIf="itemList$ | async as items">
+    <div class="col-md-4 mb-4" *ngFor="let item of items">
+      <mat-card (click)="open(item)">
+        <mat-card-header>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+        <mat-card-content>
+          <p class="text-truncate"> {{ item.description }} </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+
+  <!-- <mat-grid-list cols="3" rowHeight="1:1" gutterSize="10" *ngIf="itemList$ | async as items">
+    <mat-grid-tile *ngFor="let item of items">
+
+    </mat-grid-tile> -->
+  <!-- </mat-grid-list> -->
+</div>

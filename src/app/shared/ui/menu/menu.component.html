@@ -1,0 +1,28 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>POS Shopping HW</span>
+    <span class="spacer"></span>
+    <button mat-icon-button *ngIf="cartList$ | async as list" [matBadge]="list.cartItems.length" [matBadgeHidden]="list.cartItems.length === 0" matBadgeColor="warn" [matMenuTriggerFor]="menu">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+
+<mat-menu #menu="matMenu">
+  <ng-container *ngIf="cartList$ | async as list">
+    <ng-container *ngIf="list.cartItems.length !== 0 ;else emptyCart">
+      <div class="container-fluid">
+        {{ list.cartItems | json }}
+      </div>
+    </ng-container>
+    <ng-template #emptyCart>
+      <div class="container-fluid">
+        <div class="row mt-5 mb-5">
+          <div class="col d-flex justify-content-center">
+            <h3 class="mb-0 mt-0">Empty Cart</h3>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</mat-menu>

@@ -1,0 +1,18 @@
+<h2 mat-dialog-title> {{ data.name }} </h2>
+
+<mat-dialog-content>
+  <div class="row">
+    <div class="col">
+      <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" width="100%">
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <h3>Product Description</h3>
+      <p>{{ data.description }}</p>
+    </div>
+  </div>
+  {{ data | json }}
+</mat-dialog-content>
+
