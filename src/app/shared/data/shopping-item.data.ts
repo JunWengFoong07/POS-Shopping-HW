@@ -8,7 +8,7 @@ export const SHOPPING_ITEM: ShoppingItem[] = [
     stock: 198,
     price: 2956.26137442899,
     star: 5,
-    imagePath: '',
+    imagePath: 'https://assets-news.housing.com/news/wp-content/uploads/2022/03/03134422/Home-decoration-ideas-with-paper-9-ideas-for-your-mundane-walls.jpg',
     addedToCart: false,
     reviews: [
       {
@@ -70,7 +70,7 @@ export const SHOPPING_ITEM: ShoppingItem[] = [
     stock: 991,
     price: 1400.60519633284,
     star: 2,
-    imagePath: '',
+    imagePath: 'https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/wg_main.jpg',
     addedToCart: false,
     reviews: [
       {
@@ -92,7 +92,7 @@ export const SHOPPING_ITEM: ShoppingItem[] = [
     stock: 814,
     price: 4040.5063078308,
     star: 3,
-    imagePath: '',
+    imagePath: 'https://media.designcafe.com/wp-content/uploads/2022/04/23155313/bed-decoration-enhances-the-rooms-overall-look.jpg',
     addedToCart: false,
     reviews: [
       {
@@ -124,7 +124,7 @@ export const SHOPPING_ITEM: ShoppingItem[] = [
     stock: 272,
     price: 8722.07709216097,
     star: 5,
-    imagePath: '',
+    imagePath: 'https://nypost.com/wp-content/uploads/sites/2/2022/03/Best-House-Cleaning-Products-feature-image.jpg?quality=75&strip=all',
     addedToCart: false,
     reviews: [
       {
@@ -151,7 +151,7 @@ export const SHOPPING_ITEM: ShoppingItem[] = [
     stock: 122,
     price: 66.1110315714548,
     star: 5,
-    imagePath: '',
+    imagePath: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/31A0/production/_126240721_gettyimages-1206682746.jpg',
     addedToCart: false,
     reviews: [
       {
@@ -173,7 +173,7 @@ export const SHOPPING_ITEM: ShoppingItem[] = [
     stock: 310,
     price: 9542.68299692296,
     star: 5,
-    imagePath: '',
+    imagePath: 'https://www.foodbusinessnews.net/ext/resources/2021/6/MichelsBakeryProducts_Lead.jpg?height=635&t=1623330828&width=1200',
     addedToCart: false,
     reviews: [
       {
@@ -190,7 +190,7 @@ export const SHOPPING_ITEM: ShoppingItem[] = [
     stock: 361,
     price: 5296.86580982798,
     star: 5,
-    imagePath: '',
+    imagePath: 'https://suttachaibar.com/wp-content/uploads/2022/02/Types-of-Pasta.png',
     addedToCart: false,
     reviews: [
       {
@@ -212,7 +212,7 @@ export const SHOPPING_ITEM: ShoppingItem[] = [
     stock: 462,
     price: 7193.81272061486,
     star: 5,
-    imagePath: '',
+    imagePath: 'https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/milk-dairy/2-1-3-1dairyfoods_cheese_detailfeature_thumb.jpg?sfvrsn=aba8c621_4',
     addedToCart: false,
     reviews: [
       {
@@ -229,7 +229,7 @@ export const SHOPPING_ITEM: ShoppingItem[] = [
     stock: 768,
     price: 3618.51158290846,
     star: 5,
-    imagePath: '',
+    imagePath: 'https://assets.bonappetit.com/photos/5c366551f212512d0e6cefd0/master/w_3000,h_1688,c_limit/Basically-Coffee-0219-03.jpg',
     addedToCart: false,
     reviews: [
       {
@@ -246,7 +246,7 @@ export const SHOPPING_ITEM: ShoppingItem[] = [
     stock: 316,
     price: 5280.1400408955,
     star: 5,
-    imagePath: '',
+    imagePath: 'https://www.abnewswire.com/uploads/1666173062.jpeg',
     addedToCart: false,
     reviews: [
       {

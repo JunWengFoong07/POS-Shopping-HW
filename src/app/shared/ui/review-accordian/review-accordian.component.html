@@ -1,0 +1,14 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Buyer Reviews
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-card class="mb-2" *ngFor="let review of data">
+      <h3>{{ review.buyerName }}</h3>
+      <h4 class="d-flex align-items-center"><b>Ratings:</b>&nbsp;{{ review.star }}&nbsp;<mat-icon [inline]="true">star</mat-icon></h4>
+      <p>{{ review.comment }}</p>
+    </mat-card>
+  </mat-expansion-panel>
+</mat-accordion>

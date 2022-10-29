@@ -9,11 +9,12 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms'
 import { ToastrService } from 'ngx-toastr';
 import { DataService } from '../../service/data.service';
+import { ReviewAccordianComponent } from '../review-accordian/review-accordian.component';
 
 @Component({
   selector: 'shared-ui-shopping-item-dialog',
   standalone: true,
-  imports: [ CommonModule, MatDialogModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, FormsModule ],
+  imports: [ CommonModule, MatDialogModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, FormsModule, ReviewAccordianComponent ],
   templateUrl: './shopping-item-dialog.component.html',
   styleUrls: ['./shopping-item-dialog.component.scss']
 })

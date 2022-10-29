@@ -47,11 +47,17 @@ export class DataService {
     })
   }
 
+  // get cart behavior subject
   getShoppingCartBehaviorItem() {
     return this.cart$
   }
 
+  // add item to cart, if item exist in cart before it will update the total and quantity
+  // else it will push the cart item into cart list and set the item to added to cart
   addItemToCart(item: ShoppingItem, quantity: number) {
+    const shoppingItems = this.shoppingItem$.value
+    const shoppingItemIndex = shoppingItems.indexOf(item)
+
     const cartItems = this.cart$.value.cartItems
     let total = this.cart$.value.total
 
@@ -80,6 +86,11 @@ export class DataService {
 
       this.cart$.next({total: total, cartItems: [... cartItems, newCartItem]})
     }
+
+    shoppingItems[shoppingItemIndex].addedToCart = true
+
+    this.shoppingItem$.next(shoppingItems)
   }
+
 
 }
