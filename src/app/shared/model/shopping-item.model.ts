@@ -5,12 +5,13 @@ export interface ShoppingItem {
   description: string
   stock: number
   price: number
+  star: number
   addedToCart: boolean
   reviews: ShoppingItemReview[]
 }
 
 export interface ShoppingItemReview {
   buyerName: string
-  rating: number
+  star: number
   comment: string
 }

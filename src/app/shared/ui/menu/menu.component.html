@@ -11,8 +11,9 @@
 <mat-menu #menu="matMenu">
   <ng-container *ngIf="cartList$ | async as list">
     <ng-container *ngIf="list.cartItems.length !== 0 ;else emptyCart">
-      <div class="container-fluid">
-        {{ list.cartItems | json }}
+      <div class="container-fluid" (click)="$event.stopPropagation()">
+        <button mat-button>test</button>
+        {{ list | json }}
       </div>
     </ng-container>
     <ng-template #emptyCart>

@@ -48,21 +48,38 @@ export class DataService {
   }
 
   getShoppingCartBehaviorItem() {
-    this.push()
     return this.cart$
   }
 
-  push() {
-    const item: ShoppingCartItem = {
-      id: 1,
-      deliveryFee: 2,
-      imagePath: '',
-      name: 'asd',
-      price:2,
-      quantity: 2
-    }
+  addItemToCart(item: ShoppingItem, quantity: number) {
+    const cartItems = this.cart$.value.cartItems
+    let total = this.cart$.value.total
 
-    this.cart$.next({... this.cart$.value, cartItems: [... this.cart$.value.cartItems, item]})
+    const cartItem = cartItems.find(cartItem => cartItem.id === item.id)
+
+    if (cartItem) {
+      const index = cartItems.indexOf(cartItem)
+
+      cartItem.quantity += quantity
+      total += cartItem.price * cartItem.quantity
+
+      cartItems[index] = cartItem
+
+      this.cart$.next({ total: total, cartItems: cartItems })
+    } else {
+      const newCartItem: ShoppingCartItem = {
+        id: item.id,
+        deliveryFee: 5,
+        name: item.name,
+        imagePath: item.imagePath,
+        price: item.price,
+        quantity: quantity
+      }
+
+      total += newCartItem.quantity * newCartItem.price
+
+      this.cart$.next({total: total, cartItems: [... cartItems, newCartItem]})
+    }
   }
 
 }
