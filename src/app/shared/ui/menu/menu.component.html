@@ -12,7 +12,13 @@
   <ng-container *ngIf="cartList$ | async as list">
     <ng-container *ngIf="list.cartItems.length !== 0 ;else emptyCart">
       <div class="container-fluid" (click)="$event.stopPropagation()">
-        {{ list | json }}
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <h4><b>Total Item In Cart:</b>&nbsp;{{list.cartItems.length }}</h4>
+            <h4><b>Total:</b>&nbsp;{{list.total | currency: 'RM'}}</h4>
+          </div>
+        </div>
+        <shared-ui-cart-item-card [cartItems]="list.cartItems"></shared-ui-cart-item-card>
       </div>
     </ng-container>
     <ng-template #emptyCart>

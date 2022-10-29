@@ -8,11 +8,13 @@ import { MatBadgeModule } from '@angular/material/badge'
 import { BehaviorSubject } from 'rxjs';
 import { ShoppingCart } from '../../model/shopping-cart.model';
 import { DataService } from '../../service/data.service';
+import { MatCardModule } from '@angular/material/card';
+import { CartItemCardComponent } from '../cart-item-card/cart-item-card.component';
 
 @Component({
   selector: 'shared-ui-menu',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatBadgeModule],
+  imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatBadgeModule, MatCardModule, CartItemCardComponent ],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })

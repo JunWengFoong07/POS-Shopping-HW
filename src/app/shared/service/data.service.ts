@@ -67,7 +67,7 @@ export class DataService {
       const index = cartItems.indexOf(cartItem)
 
       cartItem.quantity += quantity
-      total += cartItem.price * cartItem.quantity
+      total += (cartItem.price * cartItem.quantity) + cartItem.deliveryFee
 
       cartItems[index] = cartItem
 
@@ -82,7 +82,7 @@ export class DataService {
         quantity: quantity
       }
 
-      total += newCartItem.quantity * newCartItem.price
+      total += (newCartItem.quantity * newCartItem.price) + newCartItem.deliveryFee
 
       this.cart$.next({total: total, cartItems: [... cartItems, newCartItem]})
     }
@@ -90,6 +90,24 @@ export class DataService {
     shoppingItems[shoppingItemIndex].addedToCart = true
 
     this.shoppingItem$.next(shoppingItems)
+  }
+
+  //remove item from cart and update item addToCart status to false
+  removeItemFromCart(item: ShoppingCartItem, index: number) {
+    const cart = this.cart$.value
+
+    cart.total -= ((item.price * item.quantity) + item.deliveryFee)
+    cart.cartItems.splice(index, 1)
+
+    const shoppingItems = this.shoppingItem$.value
+    const shoppingItem = shoppingItems.find(shoppingItem => shoppingItem.id === item.id)
+
+    if (shoppingItem) {
+      const shoppingItemIndex = shoppingItems.indexOf(shoppingItem)
+
+      shoppingItems[shoppingItemIndex].addedToCart = false
+      this.shoppingItem$.next(shoppingItems)
+    }
   }
 
 

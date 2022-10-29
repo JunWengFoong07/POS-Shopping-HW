@@ -1,0 +1,22 @@
+<mat-card *ngFor="let item of cartItems; let i = index" class="mb-3">
+  <div class="row">
+    <div class="col-4">
+      <img [src]="item.imagePath" width="100%">
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col-9">
+          <p><b>{{item.name}}</b></p>
+          <p><b>{{item.price | currency: 'RM' }}</b></p>
+          <p>Quantity: &ngsp;<b>{{item.quantity}}</b></p>
+          <p>Delivery Fee: &ngsp;<b>{{item.deliveryFee | currency: 'RM'}}</b></p>
+        </div>
+        <div class="col d-flex align-items-center">
+          <button mat-mini-fab (click)="removeItemFromCart(item, i)">
+            <mat-icon>remove_shopping_cart</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
