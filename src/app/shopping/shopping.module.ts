@@ -9,8 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatIconModule } from '@angular/material/icon'
 import { MatDialogModule } from '@angular/material/dialog'
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
 
 import { ShoppingItemListComponent } from './shopping-item-list/shopping-item-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ShoppingItemListComponent } from './shopping-item-list/shopping-item-li
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    MatButtonToggleModule
   ]
 })
 export class ShoppingModule { }

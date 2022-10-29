@@ -2,11 +2,24 @@
   <div class="row">
     <div class="col d-flex justify-content-center">
       <mat-form-field appearance="outline" style="width: 50%;">
-        <input matInput placeholder="Search">
+        <input matInput placeholder="Search" [(ngModel)]="searchInput" (ngModelChange)="search($event)">
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
     </div>
   </div>
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <mat-button-toggle-group multiple (change)="toggleHandle($event)">
+        <mat-button-toggle value="1">Decoration</mat-button-toggle>
+        <mat-button-toggle value="2">Self Care</mat-button-toggle>
+        <mat-button-toggle value="3">House Cleaning</mat-button-toggle>
+        <mat-button-toggle value="4">Cooking</mat-button-toggle>
+        <mat-button-toggle value="5">Bake</mat-button-toggle>
+        <mat-button-toggle value="6">Beverage</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <hr>
   <div class="row" *ngIf="itemList$ | async as items">
     <div class="col-md-4 mb-4" *ngFor="let item of items">
       <mat-card (click)="open(item)">
@@ -20,11 +33,4 @@
       </mat-card>
     </div>
   </div>
-
-
-  <!-- <mat-grid-list cols="3" rowHeight="1:1" gutterSize="10" *ngIf="itemList$ | async as items">
-    <mat-grid-tile *ngFor="let item of items">
-
-    </mat-grid-tile> -->
-  <!-- </mat-grid-list> -->
 </div>
